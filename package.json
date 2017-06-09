@@ -1,7 +1,7 @@
 {
   "name": "font-awesome-svg-png",
   "version": "1.2.2",
-  "description": "Font Awesome split to individual SVG and PNG files of different sizes along with Node.JS based generator",
+  "description": "Font Awesome split to individual SVG and PNG files of different sizes along with Node.JS based generator + Partials for Static Site Generator Hugo",
   "main": "font-awesome-svg-png",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,7 +9,8 @@
   },
   "author": "Damian Kaczmarek <damian@codecharm.co.uk>",
   "contributors": [
-    "Dominykas Blyžė <hello@dominykas.com>"
+    "Dominykas Blyžė <hello@dominykas.com>",
+    "Sascha Klapetz <sascha@projectival.de>"
   ],
   "repository": {
     "type": "git",
@@ -21,6 +22,7 @@
   "license": "MIT",
   "dependencies": {
     "bluebird": "^2.9.13",
+    "cheerio": "^1.0.0-rc.1",
     "extend": "~1.2.1",
     "font-awesome": "^4.7.0",
     "graceful-fs": "~2.0.1",

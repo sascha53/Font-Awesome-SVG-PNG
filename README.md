@@ -1,6 +1,8 @@
 Font-Awesome-SVG-PNG
 ====================
 
++ Partials for Static Site Generator Hugo
+
 This project provides a Font-Awesome build split to individual SVG and PNG files of different sizes along with Node.JS based generator to generate any other colors and sizes combinations.
 
 ## What is Font-Awesome?
