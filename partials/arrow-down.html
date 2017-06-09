@@ -1,10 +1,10 @@
 {{- $id := "arrow-down" -}}
 {{- $name := add "icon-" $id -}}
-{{- if not (.Scratch.Get $name) -}}
-{{- .Scratch.Set $name true -}}
+{{- if lt (.Scratch.Get $name) (len .OutputFormats) -}}
+{{- .Scratch.Set $name (add (int (.Scratch.Get $name)) 1) -}}
 <svg class="clip" xmlns="http://www.w3.org/2000/svg" width="0" height="0">
 <defs>
-<svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg" id="arrow-down" fill="currentcolor"><path d="M1675 832q0 53-37 90l-651 652q-39 37-91 37-53 0-90-37l-651-652q-38-36-38-90 0-53 38-91l74-75q39-37 91-37 53 0 90 37l294 294v-704q0-52 38-90t90-38h128q52 0 90 38t38 90v704l294-294q37-37 90-37 52 0 91 37l75 75q37 39 37 91z"/></svg>
+<svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg" id="{{ $id }}" fill="currentcolor"><path d="M1675 832q0 53-37 90l-651 652q-39 37-91 37-53 0-90-37l-651-652q-38-36-38-90 0-53 38-91l74-75q39-37 91-37 53 0 90 37l294 294v-704q0-52 38-90t90-38h128q52 0 90 38t38 90v704l294-294q37-37 90-37 52 0 91 37l75 75q37 39 37 91z"/></svg>
 </defs>
 </svg>
 {{- end }}

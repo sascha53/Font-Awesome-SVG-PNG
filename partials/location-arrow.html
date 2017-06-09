@@ -1,10 +1,10 @@
 {{- $id := "location-arrow" -}}
 {{- $name := add "icon-" $id -}}
-{{- if not (.Scratch.Get $name) -}}
-{{- .Scratch.Set $name true -}}
+{{- if lt (.Scratch.Get $name) (len .OutputFormats) -}}
+{{- .Scratch.Set $name (add (int (.Scratch.Get $name)) 1) -}}
 <svg class="clip" xmlns="http://www.w3.org/2000/svg" width="0" height="0">
 <defs>
-<svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg" id="location-arrow" fill="currentcolor"><path d="M1593 349l-640 1280q-17 35-57 35-5 0-15-2-22-5-35.5-22.5t-13.5-39.5v-576h-576q-22 0-39.5-13.5t-22.5-35.5 4-42 29-30l1280-640q13-7 29-7 27 0 45 19 15 14 18.5 34.5t-6.5 39.5z"/></svg>
+<svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg" id="{{ $id }}" fill="currentcolor"><path d="M1593 349l-640 1280q-17 35-57 35-5 0-15-2-22-5-35.5-22.5t-13.5-39.5v-576h-576q-22 0-39.5-13.5t-22.5-35.5 4-42 29-30l1280-640q13-7 29-7 27 0 45 19 15 14 18.5 34.5t-6.5 39.5z"/></svg>
 </defs>
 </svg>
 {{- end }}

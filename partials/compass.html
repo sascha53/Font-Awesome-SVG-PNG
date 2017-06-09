@@ -1,10 +1,10 @@
 {{- $id := "compass" -}}
 {{- $name := add "icon-" $id -}}
-{{- if not (.Scratch.Get $name) -}}
-{{- .Scratch.Set $name true -}}
+{{- if lt (.Scratch.Get $name) (len .OutputFormats) -}}
+{{- .Scratch.Set $name (add (int (.Scratch.Get $name)) 1) -}}
 <svg class="clip" xmlns="http://www.w3.org/2000/svg" width="0" height="0">
 <defs>
-<svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg" id="compass" fill="currentcolor"><path d="M768 1088l256-128-256-128v256zm384-591v542l-512 256v-542zm288 399q0-148-73-273t-198-198-273-73-273 73-198 198-73 273 73 273 198 198 273 73 273-73 198-198 73-273zm224 0q0 209-103 385.5t-279.5 279.5-385.5 103-385.5-103-279.5-279.5-103-385.5 103-385.5 279.5-279.5 385.5-103 385.5 103 279.5 279.5 103 385.5z"/></svg>
+<svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg" id="{{ $id }}" fill="currentcolor"><path d="M768 1088l256-128-256-128v256zm384-591v542l-512 256v-542zm288 399q0-148-73-273t-198-198-273-73-273 73-198 198-73 273 73 273 198 198 273 73 273-73 198-198 73-273zm224 0q0 209-103 385.5t-279.5 279.5-385.5 103-385.5-103-279.5-279.5-103-385.5 103-385.5 279.5-279.5 385.5-103 385.5 103 279.5 279.5 103 385.5z"/></svg>
 </defs>
 </svg>
 {{- end }}

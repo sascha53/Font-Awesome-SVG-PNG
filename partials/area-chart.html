@@ -1,10 +1,10 @@
 {{- $id := "area-chart" -}}
 {{- $name := add "icon-" $id -}}
-{{- if not (.Scratch.Get $name) -}}
-{{- .Scratch.Set $name true -}}
+{{- if lt (.Scratch.Get $name) (len .OutputFormats) -}}
+{{- .Scratch.Set $name (add (int (.Scratch.Get $name)) 1) -}}
 <svg class="clip" xmlns="http://www.w3.org/2000/svg" width="0" height="0">
 <defs>
-<svg viewBox="0 0 2048 1792" xmlns="http://www.w3.org/2000/svg" id="area-chart" fill="currentcolor"><path d="M2048 1536v128h-2048v-1536h128v1408h1920zm-384-1024l256 896h-1664v-576l448-576 576 576z"/></svg>
+<svg viewBox="0 0 2048 1792" xmlns="http://www.w3.org/2000/svg" id="{{ $id }}" fill="currentcolor"><path d="M2048 1536v128h-2048v-1536h128v1408h1920zm-384-1024l256 896h-1664v-576l448-576 576 576z"/></svg>
 </defs>
 </svg>
 {{- end }}

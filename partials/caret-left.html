@@ -1,10 +1,10 @@
 {{- $id := "caret-left" -}}
 {{- $name := add "icon-" $id -}}
-{{- if not (.Scratch.Get $name) -}}
-{{- .Scratch.Set $name true -}}
+{{- if lt (.Scratch.Get $name) (len .OutputFormats) -}}
+{{- .Scratch.Set $name (add (int (.Scratch.Get $name)) 1) -}}
 <svg class="clip" xmlns="http://www.w3.org/2000/svg" width="0" height="0">
 <defs>
-<svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg" id="caret-left" fill="currentcolor"><path d="M1216 448v896q0 26-19 45t-45 19-45-19l-448-448q-19-19-19-45t19-45l448-448q19-19 45-19t45 19 19 45z"/></svg>
+<svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg" id="{{ $id }}" fill="currentcolor"><path d="M1216 448v896q0 26-19 45t-45 19-45-19l-448-448q-19-19-19-45t19-45l448-448q19-19 45-19t45 19 19 45z"/></svg>
 </defs>
 </svg>
 {{- end }}
