@@ -1,6 +1,6 @@
-{{- $id := file-zip-o -}}
+{{- $id := "file-zip-o" -}}
 {{- $name := add "icon-" $id -}}
-{{- if not (.Scratch.Get $name -}}
+{{- if not (.Scratch.Get $name) -}}
 {{- .Scratch.Set $name true -}}
 <svg class="clip" xmlns="http://www.w3.org/2000/svg" width="0" height="0">
 <defs>

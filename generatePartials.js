@@ -30,9 +30,9 @@ fs.readdir(svgDir, (err, files) => {
 				.removeAttr('width')
 				.removeAttr('height');
 			data = $.html();
-			data = `{{- $id := ${name} -}}
+			data = `{{- $id := "${name}" -}}
 {{- $name := add "icon-" $id -}}
-{{- if not (.Scratch.Get $name -}}
+{{- if not (.Scratch.Get $name) -}}
 {{- .Scratch.Set $name true -}}
 <svg class="clip" xmlns="http://www.w3.org/2000/svg" width="0" height="0">
 <defs>
