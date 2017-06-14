@@ -1,7 +1,7 @@
 {{- $id := "i-cursor" -}}
 {{- $name := add "icon-" $id -}}
-{{- if lt (.Scratch.Get $name) (len .OutputFormats) -}}
-{{- .Scratch.Set $name (add (int (.Scratch.Get $name)) 1) -}}
+{{- if not (.Scratch.Get $name) -}}
+{{- .Scratch.Set $name true -}}
 <svg class="clip" xmlns="http://www.w3.org/2000/svg" width="0" height="0">
 <defs>
 <svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg" id="{{ $id }}" fill="currentcolor"><path d="M1216 128q-320 0-320 224v416h128v128h-128v544q0 224 320 224h64v128h-64q-272 0-384-146-112 146-384 146h-64v-128h64q320 0 320-224v-544h-128v-128h128v-416q0-224-320-224h-64v-128h64q272 0 384 146 112-146 384-146h64v128h-64z"/></svg>

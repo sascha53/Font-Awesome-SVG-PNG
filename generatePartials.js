@@ -32,8 +32,8 @@ fs.readdir(svgDir, (err, files) => {
 			data = $.html();
 			data = `{{- $id := "${name}" -}}
 {{- $name := add "icon-" $id -}}
-{{- if lt (.Scratch.Get $name) (len .OutputFormats) -}}
-{{- .Scratch.Set $name (add (int (.Scratch.Get $name)) 1) -}}
+{{- if not (.Scratch.Get $name) -}}
+{{- .Scratch.Set $name true -}}
 <svg class="clip" xmlns="http://www.w3.org/2000/svg" width="0" height="0">
 <defs>
 ${data}
